@@ -3,8 +3,77 @@
 
 Entries in this file are in reverse chronological order.
 
+## 2024-12-04
+
+* v14.2.0-3 prepared
+* be89c63 build-assets/package.json: bump deps
+* 7fd6b4b website: updates
+
+## 2024-10-15
+
+* fc1c158 website: updates
+* 5388bce website: updates
+
+## 2024-10-14
+
+* 7fdb57e website: updates
+
+## 2024-10-13
+
+* c4a5b92 website: updates
+* bbc5765 website: updates
+* 2bf8c9a website: updates
+
+## 2024-10-11
+
+* 07b74fa website: updates
+* 0f1602c website/blog/_templates/blog-post-release*
+* 80e445c website/blog/_templates/blog-post-release*
+
+## 2024-10-10
+
+* 78d4634 website: updates
+* b9cf3ad website: updates
+
+## 2024-10-09
+
+* 36bce4e website move blog post templates
+* 8b50cc5 website: updates
+* 0502063 website: updates
+
+## 2024-10-07
+
+* 202e89e website: updates
+* fb36db0 website: updates
+
+## 2024-10-06
+
+* cdfab4b website: updates
+* 0ae3c75 website: updates
+* cea49c9 re-generate workflows
+
+## 2024-10-04
+
+* d73f6b2 website: updates
+* bf308a9 templates/body-blog update
+
+## 2024-09-18
+
+* 29f6e2f website: updates
+* c9561c4 website update
+* dc7339e build-assets/package.json: bump deps
+
+## 2024-09-12
+
+* fa071d9 update scripts copyright notices
+
 ## 2024-09-06
 
+* acb9735 templates: body-blog update known problems
+* 84c10bb website: remove known problems from recent releases
+* 89586bd 14.2.0-2.1
+* d0990fb package.json .pre
+* c10c485 CHANGELOG: publish npm v14.2.0-2.1
 * v14.2.0-2 published on npmjs.com
 * 6cc099e package.json: update urls for 14.2.0-2.1 release
 * 40ea670 blog post release 14.2.0-2 published
@@ -476,8 +545,10 @@ Entries in this file are in reverse chronological order.
 
 ## 2023-08-25
 
-2023-08-25 * 522a594 12.3.0-1.1
-2023-08-25 * 53940f7 CHANGELOG: publish npm v12.3.0-1.1
+## 2023-08-25
+
+* 522a594 12.3.0-1.1
+* 53940f7 CHANGELOG: publish npm v12.3.0-1.1
 * 7dba1ee package.json: update urls for 12.3.0-1 release
 * 075e53a CHANGELOG update
 
