@@ -287,7 +287,7 @@ const config: Config = {
   // https://docusaurus.io/docs/seo
   themeConfig: {
     // The project's social card, og:image, twitter:image, 1200x630
-    image: 'img/sun-rise-og-image.jpg',
+    image: 'img/sunrise-og-image.jpg',
 
     metadata: [
       {
