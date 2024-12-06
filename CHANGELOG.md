@@ -3,9 +3,14 @@
 
 Entries in this file are in reverse chronological order.
 
+## 2024-12-06
+
+* v14.2.0-3 released
+* df1636f re-generate workflows
+
 ## 2024-12-04
 
-* v14.2.0-3 prepared
+* 3ffa6bd prepare v14.2.0-3
 * be89c63 build-assets/package.json: bump deps
 * 7fd6b4b website: updates
 
