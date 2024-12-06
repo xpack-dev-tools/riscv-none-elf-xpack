@@ -1,5 +1,6 @@
 ---
 title: xPack GNU RISC-V Embedded GCC v14.2.0-1 released
+seo_title: Version 14.2.0-1 released
 description: Version 14.2.0-1 is a new release of xPack GNU RISC-V Embedded GCC.
 keywords:
   - xpack
