@@ -5,7 +5,10 @@ Entries in this file are in reverse chronological order.
 
 ## 2024-12-06
 
-* v14.2.0-3 released
+* v14.2.0-3 published on npmjs.com
+* 433fd24 package.json: update urls for 14.2.0-3.1 release
+* e39239e blog post release 14.2.0-3 published
+* 0da919e CHANGELOG update
 * df1636f re-generate workflows
 
 ## 2024-12-04
