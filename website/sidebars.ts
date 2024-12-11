@@ -48,11 +48,6 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'doc',
-      id: 'releases/index',
-      label: 'Releases'
-    },
-    {
-      type: 'doc',
       id: 'faq/index',
       label: 'FAQ'
     },
@@ -60,6 +55,11 @@ const sidebars: SidebarsConfig = {
       type: 'doc',
       id: 'support/index',
       label: 'Help Centre'
+    },
+    {
+      type: 'doc',
+      id: 'releases/index',
+      label: 'Releases'
     },
     {
       type: 'doc',
