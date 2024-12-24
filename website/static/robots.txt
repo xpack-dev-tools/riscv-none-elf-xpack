@@ -1,0 +1,7 @@
+Sitemap: https://xpack-dev-tools.github.io/riscv-none-elf-gcc-xpack/sitemap.xml
+
+User-agent: *
+Disallow: /riscv-none-elf-gcc-xpack/blog/archive/
+Disallow: /riscv-none-elf-gcc-xpack/blog/authors/
+Disallow: /riscv-none-elf-gcc-xpack/blog/page/
+Disallow: /riscv-none-elf-gcc-xpack/blog/tags/
