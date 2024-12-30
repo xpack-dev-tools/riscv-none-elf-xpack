@@ -161,6 +161,8 @@ and will be updated when the new release is out.
 Check the latest versions at https://github.com/xpack-dev-tools/ and
 update the dependencies in `build-assets/package.json`.
 
+<CheckUpstreamRelease/>
+
 ### Increase the version and update it in the top `package.json`
 
 - determine the version (like <code>{customField('xpackVersion')}</code>)
@@ -172,6 +174,10 @@ like <code>{customField('xpackVersion')}.{customField('npmSubversion')}.pre</cod
 
 If the project uses `customFields` in `build-assets/package.json`,
 update them.
+
+### Update the website commons
+
+Run the `website-generate-commons` actions from `build-assets`.
 
 ### Start the local web server
 
@@ -191,10 +197,8 @@ Determine the version (like <code>{customField('xpackVersion')}</code>)
 and update the `build-assets/scripts/VERSION` file; the format
 is <code>{customField('xpackVersion')}</code>.
 {isXpackSubversionDouble() ?
-'The fourth & fifth numbers are the xPack release number of this version. A sixth number will be added to the version in `package.json` when the package is published to the `npm` server' :
-'The fourth number is the xPack release number of this version. A fifth number will be added to the version in `package.json` when the package is published to the `npm` server'}.
-
-<CheckUpstreamRelease/>
+'The fourth & fifth numbers are the xPack release number of this version. A sixth' :
+'The fourth number is the xPack release number of this version. A fifth'} number will be added to the version in `package.json` when the package is published to the `npm` server.
 
 ### Update the `customFields` (if necessary)
 
@@ -407,13 +411,15 @@ caffeinate ssh xbbla32
 Copy the trees displayed at the end of the test builds and paste to
 **Folder hierarchy** section in the web file:
 
-- `website/docs/install/_miscellaneous.mdx`
+- `website/docs/install/_folders-hierarchies-linux.mdx`
+- `website/docs/install/_folders-hierarchies-macos.mdx`
+- `website/docs/install/_folders-hierarchies-windows.mdx`
 
 If present, replace the actual version
-(like **{customField('xpackVersion')}**) with the following expression:
+(like **{customField('upstreamVersion')}**) with the following expression:
 
 ```txt
-${customField('xpackVersion')}
+${customField('upstreamVersion')}
 ```
 
 :::tip
@@ -424,6 +430,8 @@ via HomeBrew, and make a link to `/usr/local/bin`.
 
 :::
 
+- commit with _**website: update folder hierarchies**_.
+
 ### Update the list of links in top package.json
 
 Copy/paste the full list of links displayed at the end of the build, in
@@ -431,14 +439,14 @@ sequence, for each platform (Windows, macOS, GNU/Linux),
 and check the
 differences compared to the repository.
 
-Commit if necessary.
+Commit if necessary with _**package.json: update executables links**_
 
 ### Update the durations of the development builds
 
 In `website/docs/maintainer/_development-durations.mdx`, update
 the durations of the builds.
 
-Commit if necessary.
+Commit if necessary with _**website: update development durations**_
 
 ### How to build a debug version
 
