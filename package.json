@@ -8,10 +8,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xpack-dev-tools/riscv-none-gcc-xpack.git/"
+    "url": "git+https://github.com/xpack-dev-tools/riscv-none-gcc-xpack.git"
   },
   "bugs": {
-    "url": "https://github.com/xpack-dev-tools/riscv-none-elf-gcc-xpack/issues/"
+    "url": "https://github.com/xpack-dev-tools/riscv-none-elf-gcc-xpack/issues"
   },
   "homepage": "https://github.com/xpack-dev-tools/riscv-none-elf-gcc-xpack/#readme",
   "keywords": [
@@ -24,7 +24,7 @@
   "author": {
     "name": "Liviu Ionescu",
     "email": "ilg@livius.net",
-    "url": "https://github.com/ilg-ul/"
+    "url": "https://github.com/ilg-ul"
   },
   "license": "MIT",
   "xpack": {
