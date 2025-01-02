@@ -13,7 +13,7 @@
   "bugs": {
     "url": "https://github.com/xpack-dev-tools/riscv-none-elf-gcc-xpack/issues"
   },
-  "homepage": "https://github.com/xpack-dev-tools/riscv-none-elf-gcc-xpack/#readme",
+  "homepage": "https://xpack-dev-tools.github.io/riscv-none-elf-gcc-xpack/",
   "keywords": [
     "xpack",
     "gcc",
