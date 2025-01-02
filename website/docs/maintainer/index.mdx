@@ -220,13 +220,6 @@ and fix them; assign them to a milestone (like <code>{customField('xpackVersion'
 
 ### Update `CHANGELOG.md`
 
-- open the `CHANGELOG.md` file
-- check if all previous fixed issues are in
-- check the latest commits `xpm run git-log`; if necessary, copy/paste lines,
-  group by dates and edit them using the below regular expressions
-- add a new entry like _**\* v{customField('xpackVersion')} prepared**_
-- commit with a message like _**prepare v{customField('xpackVersion')}**_
-
 To turn the dates into headings, change from:
 
 ```txt
@@ -256,6 +249,14 @@ to:
 ```txt
 *
 ```
+
+- open the `CHANGELOG.md` file
+- check if all previous fixed issues are in
+- check the latest commits `xpm run git-log`; if necessary, copy/paste lines,
+  group by dates and edit them using the below regular expressions
+- add a new entry like _**\* v{customField('xpackVersion')} prepared**_
+- commit with the message _**prepare v{customField('xpackVersion')}**_
+
 
 ### Push the changes to the `xpack-development` branch
 
@@ -430,7 +431,7 @@ via HomeBrew, and make a link to `/usr/local/bin`.
 
 :::
 
-- commit with _**website: update folder hierarchies**_.
+Commit with the message _**website: update folder hierarchies**_.
 
 ### Update the list of links in top package.json
 
@@ -439,14 +440,14 @@ sequence, for each platform (Windows, macOS, GNU/Linux),
 and check the
 differences compared to the repository.
 
-Commit if necessary with _**package.json: update executables links**_
+Commit if necessary with the message _**package.json: update executables links**_.
 
 ### Update the durations of the development builds
 
 In `website/docs/maintainer/_development-durations.mdx`, update
 the durations of the builds.
 
-Commit if necessary with _**website: update development durations**_
+Commit with the message _**website: update development durations**_.
 
 ### How to build a debug version
 
@@ -537,7 +538,7 @@ to `"@xpack-dev-tools/xbb-helper":`
 
 ### Commit the changes to `build-assets/package.json`
 
-Use the message **build-assets/package.json: bump deps**.
+Commit with the message _**build-assets/package.json: bump deps**_.
 
 ### Check for disk space
 
@@ -584,7 +585,7 @@ rm -rf ~/Work/xpack-dev-tools/*/build-assets/build
 
 ### Generate the GitHub workflows
 
-Run the **generate-workflows** xPack action to update the
+Run the **generate-workflows** xpm/xPack action to update the
 GitHub workflow files.
 
 ```sh
@@ -593,7 +594,7 @@ xpm run generate-workflows -C ~/Work/xpack-dev-tools/riscv-none-elf-gcc-xpack.gi
 
 ### Commit and push
 
-- commit with the message **Re-generate workflows**
+- commit with the message **re-generate workflows**
 - push the `xpack-development` branch to GitHub
 
 <FirstProductionRun/>
@@ -619,7 +620,7 @@ xpm run trigger-workflow-build-linux-arm64 -C ~/Work/xpack-dev-tools/riscv-none-
 xpm run trigger-workflow-build-linux-arm -C ~/Work/xpack-dev-tools/riscv-none-elf-gcc-xpack.git/build-assets
 ```
 
-The scripts behind these actions require the `XPACK_DEV_TOOLS_FG_DISPATCH_TOKEN`
+The scripts behind these actions require the `GITHUB_API_DISPATCH_TOKEN`
 variable to be present
 in the environment, and the organization `PUBLISH_TOKEN` to be visible in the
 Settings → Action →
@@ -637,6 +638,8 @@ The workflow results and logs are available from the
 
 Update the values in `website/docs/maintainer/_github-actions-durations.mdx`
 with those shown by GitHub Actions.
+
+Commit with the message _**website: update actions durations**_.
 
 The resulting binaries are available for testing from
 [pre-releases/test](https://github.com/xpack-dev-tools/pre-releases/releases/tag/test/).
@@ -661,12 +664,19 @@ xpm run trigger-workflow-test-docker-linux-x64 -C ~/Work/xpack-dev-tools/riscv-n
 xpm run trigger-workflow-test-docker-linux-arm -C ~/Work/xpack-dev-tools/riscv-none-elf-gcc-xpack.git/build-assets
 ```
 
-The scripts behind these accessible require the `XPACK_DEV_TOOLS_FG_DISPATCH_TOKEN` variable to be present
+The scripts behind these accessible require the `GITHUB_API_DISPATCH_TOKEN` variable to be present
 in the environment.
 
 These actions use the `xpack-development` branch of this repo and the
 [pre-releases/test](https://github.com/xpack-dev-tools/pre-releases/releases/tag/test/)
 binaries.
+
+:::caution
+
+Some of the `docker-linux-arm` tests have an issue on Debian and the
+**Clean working area** step fails.
+
+:::
 
 The tests results are available from the
 [GitHub Actions](https://github.com/xpack-dev-tools/riscv-none-elf-gcc-xpack/actions/) page.
@@ -679,7 +689,7 @@ with previous runs.
 Since GitHub Actions provides a limited range of versions for the macOS
 runner, the multi-version macOS tests run on Travis.
 
-To trigger the Travis test, run the **trigger-travis-macos** xPack action:
+To trigger the Travis test, run the **trigger-travis-macos** xpm/xPack action:
 
 ```sh
 xpm run trigger-travis-macos -C ~/Work/xpack-dev-tools/riscv-none-elf-gcc-xpack.git/build-assets
@@ -721,10 +731,10 @@ xattr -cr ${HOME}/Downloads/xpack-*
 
 - in `CHANGELOG.md`, add the release date and a message
   like _**\* v{customField('xpackVersion')} released**_
-- commit with _**CHANGELOG update**_
+- commit with the message _**CHANGELOG update**_
 - check and possibly update the `build-assets/templates/body-github-release-liquid.mdx`
 - push the `xpack-development` branch to GitHub
-- run the **trigger-workflow-publish-release** xPack action:
+- run the **trigger-workflow-publish-release** xpm/xPack action:
 
 ```sh
 xpm run trigger-workflow-publish-release -C ~/Work/xpack-dev-tools/riscv-none-elf-gcc-xpack.git/build-assets
@@ -745,13 +755,17 @@ with all binaries attached.
 - do **not** enable Discussions yet
 - click the **Publish release** button
 
-Note: at this moment the system should send a notification to all clients
-watching this project.
+:::info
+
+At this moment the system should send an email notification to all clients
+watching the riscv-none-elf-gcc-xpack project.
+
+:::
 
 ### Prepare a new blog post
 
 - check and possibly update the `website/blog/_templates/blog-post-release-part-[12]-liquid.md`
-- run the **generate-website-blog-post** xPack action;
+- run the **generate-website-blog-post** xpm/xPack action;
 this will add a file in the `website/blog` folder:
 
 ```sh
@@ -760,18 +774,18 @@ xpm run generate-website-blog-post -C ~/Work/xpack-dev-tools/riscv-none-elf-gcc-
 
 - edit the front matter properties
 - select the correct summary
-- commit with _**blog post release {customField('xpackVersion')} published**_
+- commit with the message _**website: blog post release {customField('xpackVersion')} published**_
 
 ### Update the web install page
 
 - check and possibly update the output of the `--version` runs in
   - `website/docs/install/_automatic-install-quick-test.mdx`
   - `website/docs/install/_manual-install-quick-test.mdx`
-- commit changes
+- commit with the message _**website: update quick tests**_
 
 ### Check the list of links in top package.json
 
-- open the `package.json` file
+- open the top `package.json` file
 - check if the links in the `bin` property cover the actual binaries
 - if necessary, also check on Windows
 
@@ -779,7 +793,7 @@ xpm run generate-website-blog-post -C ~/Work/xpack-dev-tools/riscv-none-elf-gcc-
 
 - select the `xpack-development` branch
 - be sure that the binaries were attached to the pre-release
-- run the **update-package-binaries** xPack action:
+- run the **update-package-binaries** xpm/xPack action:
 
 ```sh
 xpm run update-package-binaries -C ~/Work/xpack-dev-tools/riscv-none-elf-gcc-xpack.git/build-assets
@@ -791,7 +805,7 @@ xpm run update-package-binaries -C ~/Work/xpack-dev-tools/riscv-none-elf-gcc-xpa
 - from the release, check the SHA & file names
 - compare the SHA sums with those shown by `cat *.sha`
 - check the executable names
-- commit all changes, use a message like
+- commit all changes with the message
   _**package.json: update urls for {customField('xpackVersion')}.{customField('npmSubversion')} release**_
 
 ### Publish on the npmjs.com server
@@ -799,7 +813,7 @@ xpm run update-package-binaries -C ~/Work/xpack-dev-tools/riscv-none-elf-gcc-xpa
 - select the `xpack-development` branch
 - check the latest commits `xpm run git-log`
 - update `CHANGELOG.md`, add a line like _**\* v{customField('xpackVersion')} published on npmjs.com**_
-- commit with a message like _**CHANGELOG: publish npm v{customField('xpackVersion')}.{customField('npmSubversion')}**_
+- commit with the message _**CHANGELOG: publish npm v{customField('xpackVersion')}.{customField('npmSubversion')}**_
 - `npm pack` and check the content of the archive, which should list
   only the `package.json`, the `README.md`, `LICENSE` and `CHANGELOG.md`;
   possibly adjust `.npmignore`
@@ -829,7 +843,7 @@ After a few moments the version will be visible at
 
 ### Test if the binaries can be installed with xpm
 
-Run the **trigger-workflow-test-xpm** xPack action:
+Run the **trigger-workflow-test-xpm** xpm/xPack action:
 
 ```sh
 xpm run trigger-workflow-test-xpm -C ~/Work/xpack-dev-tools/riscv-none-elf-gcc-xpack.git/build-assets
@@ -847,9 +861,13 @@ The tests results are available from the
 When the release is considered stable, promote it as `latest`:
 
 <CodeBlock language="sh"> {
+`npm dist-tag add @xpack-dev-tools/riscv-none-elf-gcc@${customField('xpackVersion')}.${customField('npmSubversion')} latest
+`} </CodeBlock>
+
+Check the result:
+
+<CodeBlock language="sh"> {
 `npm dist-tag ls @xpack-dev-tools/riscv-none-elf-gcc
-npm dist-tag add @xpack-dev-tools/riscv-none-elf-gcc@${customField('xpackVersion')}.${customField('npmSubversion')} latest
-npm dist-tag ls @xpack-dev-tools/riscv-none-elf-gcc
 `} </CodeBlock>
 
 In case the release proves problematic and needs to be unpublished:
@@ -863,23 +881,26 @@ In case the release proves problematic and needs to be unpublished:
 Validate the web site content in a local build via the npm `build` script:
 
 ```sh
-npm --prefix website run build
+npm run build -C website
 ```
 
 ### Publish the website
 
+- stop the local web server
+- select the `website` branch
 - merge `xpack-development` into `website`
 - push the `website` branch to GitHub
-
-At this moment an automated GitHub Action will generate and publish the website.
-
+  :::info
+  At this moment an automated GitHub Action will generate and publish the website.
+  :::
 - the new release blog post is
 in https://xpack-dev-tools.github.io/riscv-none-elf-gcc-xpack/blog/
 - remember the post URL, since it must be used to update the release page
 and the X/Twitter announcement
+- switch to https://xpack-dev-tools.github.io/riscv-none-elf-gcc-xpack/docs/maintainer/#update-the-xpack-branch
 
 The `website` branch may be subsequently updated, as long as the
-version in `package.json` is not changed.
+version in the top `package.json` is not changed.
 
 ### Update the `xpack` branch
 
@@ -901,7 +922,8 @@ Avoid further updates to the `xpack` branch until the next release.
 - check the download counter, it should match the number of tests
 - add a link to the Web blog `[Continue reading »]()`; use an same blog URL
 - remove the _tests only_ notice
-- **disable** the **pre-release** button
+- **disable** the **Set as a pre-release** button
+- **enable** the **Set as the latest release** button
 - click the **Update Release** button
 
 ### Check SourceForge mirror
@@ -917,7 +939,7 @@ Avoid further updates to the `xpack` branch until the next release.
 
 ### Clean the work area
 
-Run the **trigger-workflow-deep-clean** xPack action
+Run the **trigger-workflow-deep-clean** xpm/xPack action
 
 ```sh
 xpm run trigger-workflow-deep-clean -C ~/Work/xpack-dev-tools/riscv-none-elf-gcc-xpack.git/build-assets
@@ -927,6 +949,15 @@ This will remove the build folders on all self-hosted runners.
 
 The results are available from the
 [GitHub Actions](https://github.com/xpack-dev-tools/riscv-none-elf-gcc-xpack/actions/) page.
+
+### Close possible open issues
+
+Check GitHub issues and pull requests:
+
+- https://github.com/xpack-dev-tools/riscv-none-elf-gcc-xpack/issues
+- https://github.com/xpack-dev-tools/riscv-none-elf-gcc-xpack/pulls
+
+Close those that were addressed.
 
 ## Share on Twitter
 
