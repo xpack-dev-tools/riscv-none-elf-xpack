@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/micro-os-plus/cpp-libs-xpack.git/"
+    "url": "https://github.com/micro-os-plus/cpp-libs-xpack.git"
   },
   "homepage": "https://github.com/micro-os-plus/cpp-libs-xpack#readme",
   "keywords": [
