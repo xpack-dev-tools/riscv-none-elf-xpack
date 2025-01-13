@@ -79,7 +79,7 @@ jobs:
   # The ubuntu:12.04 image fails to update.
   ubuntu-x64:
     name: 'x64 riscv-none-elf-gcc ${{github.event.inputs.version}} test on Ubuntu stable'
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     steps:
       - name: 'Show environment'
@@ -127,7 +127,7 @@ jobs:
   # https://hub.docker.com/_/debian
   debian-x64:
     name: 'x64 riscv-none-elf-gcc ${{github.event.inputs.version}} test on Debian stable'
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     steps:
       - name: 'Show environment'
@@ -169,7 +169,7 @@ jobs:
   # For `-static` to work, explicit static packages must be present.
   redhat-x64:
     name: 'x64 riscv-none-elf-gcc ${{github.event.inputs.version}} test on RedHat stable'
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     steps:
       - name: 'Show environment'
@@ -206,7 +206,7 @@ jobs:
   # `-static` disabled, there is no static libc.a.
   fedora-x64:
     name: 'x64 riscv-none-elf-gcc ${{github.event.inputs.version}} test on Fedora stable'
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     steps:
       - name: 'Show environment'
@@ -255,7 +255,7 @@ jobs:
   # `-static` disabled, there is no static libc.a.
   opensuse-x64:
     name: 'x64 riscv-none-elf-gcc ${{github.event.inputs.version}} test on OpenSUSE stable'
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     steps:
       - name: 'Show environment'
@@ -281,21 +281,21 @@ jobs:
           ref: ${{github.event.inputs.helper-git-ref}}
           fetch-depth: 3
 
-      - name: 'OpenSUSE 15.4 x64'
-        uses: docker://opensuse/leap:15.4
+      - name: 'OpenSUSE 15.6 x64'
+        uses: docker://opensuse/leap:15.6
         with:
           entrypoint: /bin/bash
-          args: /github/workspace/build-assets/scripts/test.sh --image opensuse/leap:15.4 --version ${{github.event.inputs.version}} --base-url ${{github.event.inputs.base_url}}
+          args: /github/workspace/build-assets/scripts/test.sh --image opensuse/leap:15.6 --version ${{github.event.inputs.version}} --base-url ${{github.event.inputs.base_url}}
 
-      - name: 'OpenSUSE 15.3 x64'
-        uses: docker://opensuse/leap:15.3
+      - name: 'OpenSUSE 15.5 x64'
+        uses: docker://opensuse/leap:15.5
         with:
           entrypoint: /bin/bash
-          args: /github/workspace/build-assets/scripts/test.sh --image opensuse/leap:15.3 --version ${{github.event.inputs.version}} --base-url ${{github.event.inputs.base_url}}
+          args: /github/workspace/build-assets/scripts/test.sh --image opensuse/leap:15.5 --version ${{github.event.inputs.version}} --base-url ${{github.event.inputs.base_url}}
 
   ubuntu-x64-latest:
     name: 'x64 riscv-none-elf-gcc ${{github.event.inputs.version}} test on Ubuntu latest'
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     steps:
       - name: 'Show environment'
@@ -330,7 +330,7 @@ jobs:
 
   debian-x64-latest:
     name: 'x64 riscv-none-elf-gcc ${{github.event.inputs.version}} test on Debian latest'
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     steps:
       - name: 'Show environment'
@@ -379,7 +379,7 @@ jobs:
   # `-static` disabled, there is no static libc.a.
   fedora-x64-latest:
     name: 'x64 riscv-none-elf-gcc ${{github.event.inputs.version}} test on Fedora latest'
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     steps:
       - name: 'Show environment'
@@ -414,7 +414,7 @@ jobs:
   # - https://hub.docker.com/_/archlinux
   arch-x64-latest:
     name: 'x64 riscv-none-elf-gcc ${{github.event.inputs.version}} test on Arch latest'
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     steps:
       - name: 'Show environment'
