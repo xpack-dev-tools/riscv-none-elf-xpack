@@ -4,6 +4,13 @@
   "description": "A binary xpm package with the GNU RISC-V Embedded GCC executables",
   "main": "",
   "scripts": {
+    "generate-top-commons": "bash node_modules/@xpack/npm-packages-helper/maintenance-scripts/generate-top-commons.sh --xpack-dev-tools",
+    "npm-install": "npm install",
+    "npm-link-helpers": "npm link @xpack/npm-packages-helper @xpack/docusaurus-template-liquid",
+    "npm-outdated": "npm outdated",
+    "npm-pack": "npm pack",
+    "npm-link": "npm link",
+    "deep-clean": "del-cli node_modules package-lock.json *.tgz",
     "postversion": "git push origin --all && git push origin --tags"
   },
   "repository": {
@@ -11,9 +18,9 @@
     "url": "git+https://github.com/xpack-dev-tools/riscv-none-gcc-xpack.git"
   },
   "bugs": {
-    "url": "https://github.com/xpack-dev-tools/riscv-none-elf-gcc-xpack/issues"
+    "url": "https://github.com/xpack-dev-tools/riscv-none-gcc-xpack/issues"
   },
-  "homepage": "https://xpack-dev-tools.github.io/riscv-none-elf-gcc-xpack/",
+  "homepage": "https://xpack-dev-tools.github.io/riscv-none-gcc-xpack/",
   "keywords": [
     "xpack",
     "gcc",
@@ -94,5 +101,16 @@
       "riscv-none-elf-strings": "./.content/bin/riscv-none-elf-strings",
       "riscv-none-elf-strip": "./.content/bin/riscv-none-elf-strip"
     }
+  },
+  "devDependencies": {
+    "del-cli": "^6.0.0",
+    "json": "^11.0.0",
+    "liquidjs": "^10.19.1"
+  },
+  "topConfig": {
+    "longName": "GNU RISC-V Embedded GCC"
+  },
+  "engines": {
+    "node": " >=18.0.0"
   }
 }
