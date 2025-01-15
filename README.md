@@ -5,8 +5,7 @@
 
 # The xPack GNU RISC-V Embedded GCC
 
-A standalone cross-platform (Windows, macOS, GNU/Linux)
-binary distribution of GNU RISC-V Embedded GCC,
+A standalone, cross-platform (Windows, macOS, GNU/Linux) binary distribution of GNU RISC-V Embedded GCC,
 intended for reproducible builds.
 
 ## Project documentation
