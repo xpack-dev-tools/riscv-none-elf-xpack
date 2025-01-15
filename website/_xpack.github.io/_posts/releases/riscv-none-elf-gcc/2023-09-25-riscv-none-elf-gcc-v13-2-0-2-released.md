@@ -269,7 +269,7 @@ the distribution.
 
 ## Bug fixes
 
-- [[#22](https://github.com/xpack-dev-tools/riscv-none-elf-gcc-xpack/issues/22)]
+- [[#22](https://github.com/xpack-dev-tools/riscv-none-elf-gcc-xpack/issues/22)]:
   due to a an issue in the build scripts, on GNU/Linux,
   the `riscv-none-elf-gdb` was built without ELF support; fixed
 
