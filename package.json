@@ -15,12 +15,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/xpack-dev-tools/riscv-none-gcc-xpack.git"
+    "url": "git+https://github.com/xpack-dev-tools/riscv-none-elf-gcc-xpack.git"
   },
   "bugs": {
-    "url": "https://github.com/xpack-dev-tools/riscv-none-gcc-xpack/issues"
+    "url": "https://github.com/xpack-dev-tools/riscv-none-elf-gcc-xpack/issues"
   },
-  "homepage": "https://xpack-dev-tools.github.io/riscv-none-gcc-xpack/",
+  "homepage": "https://xpack-dev-tools.github.io/riscv-none-elf-gcc-xpack/",
   "keywords": [
     "xpack",
     "gcc",

@@ -74,10 +74,6 @@ jobs:
 
 
 
-
-
-
-
   darwin-arm64-build:
     name: 'darwin-arm64 riscv-none-elf-gcc ${{github.event.inputs.version}} build'
     timeout-minutes: 2880 # 2 days
