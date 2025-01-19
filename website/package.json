@@ -56,7 +56,19 @@
       "last 5 safari version"
     ]
   },
-  "websiteConfig": {},
+  "websiteConfig": {
+    "customFields": {
+      "programName": "riscv-none-elf-gcc",
+      "branding": "riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) ",
+      "showDeprecatedRiscvGccAnalytics": "true",
+      "gdbVersionMajor": "15",
+      "gdbVersionMinor": "1",
+      "binutilsVersionMajor": "2",
+      "binutilsVersionMinor": "43.1",
+      "pythonVersion": "3.12.2",
+      "newlibVersion": "4.4.0"
+    }
+  },
   "engines": {
     "node": ">=18.0"
   }
