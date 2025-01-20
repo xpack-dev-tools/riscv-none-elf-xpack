@@ -18,10 +18,10 @@ tags:
 # ----- Custom properties -----------------------------------------------------
 
 gcc_version: "{{upstreamVersion}}"
-binutils_version: "{{customFields.binutilsVersionMajor}}.{{customFields.binutilsVersionMinor}}"
-gdb_version: "{{customFields.gdbVersionMajor}}.{{customFields.gdbVersionMinor}}"
-newlib_version: "{{customFields.newlibVersion}}"
-python_version: "{{customFields.pythonVersion}}"
+binutils_version: "{{packageWebsiteConfig.binutilsVersionMajor}}.{{packageWebsiteConfig.binutilsVersionMinor}}"
+gdb_version: "{{packageWebsiteConfig.gdbVersionMajor}}.{{packageWebsiteConfig.gdbVersionMinor}}"
+newlib_version: "{{packageWebsiteConfig.newlibVersion}}"
+python_version: "{{packageWebsiteConfig.pythonVersion}}"
 
 version: "{{releaseVersion}}"
 npm_subversion: "1"
