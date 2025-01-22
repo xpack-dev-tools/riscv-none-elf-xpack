@@ -37,7 +37,11 @@ export const redirects = {
     {
       from: '/docs/user-info',
       to: '/docs/user',
-    }
+    },
+    {
+      from: '/docs/about',
+      to: '/docs/project/about',
+    },
   ],
   createRedirects(existingPath) {
     console.log(existingPath);
@@ -70,5 +74,5 @@ export const redirects = {
         existingPath.replace('/maintainer-info', '/maintainer')
       ];
     }
-}
+  }
 }
