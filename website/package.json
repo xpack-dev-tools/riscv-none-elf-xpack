@@ -65,6 +65,7 @@
   "websiteConfig": {
     "programName": "riscv-none-elf-gcc",
     "branding": "riscv-none-elf-gcc (xPack GNU RISC-V Embedded GCC x86_64) ",
+    "isGccToolchain": "true",
     "showDeprecatedRiscvGccAnalytics": "true",
     "gdbVersionMajor": "15",
     "gdbVersionMinor": "1",
