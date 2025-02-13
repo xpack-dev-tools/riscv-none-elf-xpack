@@ -243,7 +243,7 @@ function application_build_versioned_components()
     # with two more combinations:
     # - rv32ec-ilp32e
     # - rv32imc-ilp32
-    
+
     if [ "${XBB_APPLICATION_WITHOUT_MULTILIB:-""}" != "y" ]
     then
       if [ "${XBB_IS_DEVELOPMENT}" != "y" ]
@@ -515,8 +515,15 @@ function application_build_versioned_components()
     # https://sourceware.org/pub/bzip2/
     XBB_BZIP2_VERSION="1.0.8"
 
-    # https://github.com/libffi/libffi/releases
-    XBB_LIBFFI_VERSION="3.4.6" # "3.4.4"
+    # https://github.com/libffi/libffi/tags
+    if [[ "${XBB_RELEASE_VERSION}" =~ 14[.]2[.]1-1[.]2 ]]
+    then
+      # On arm64 macOS, with clang 19, 3.4.6 fails with:
+      # error: invalid CFI advance_loc expression
+      XBB_LIBFFI_VERSION="3.4.7" # "3.4.6"
+    else
+      XBB_LIBFFI_VERSION="3.4.6" # "3.4.4"
+    fi
 
     # https://www.bytereef.org/mpdecimal/download.html
     XBB_MPDECIMAL_VERSION="2.5.1"
