@@ -53,10 +53,6 @@
           "fileName": "xpack-riscv-none-elf-gcc-14.2.0-3-linux-arm64.tar.gz",
           "sha256": "0c0551986e30174af55f245e1c3a86c45233fc793bf36586567f266ada6fdd98"
         },
-        "linux-arm": {
-          "fileName": "xpack-riscv-none-elf-gcc-14.2.0-3-linux-arm.tar.gz",
-          "sha256": "c8587c7a45b141e1e949084f2c05a51e01f7d4494c0e647c623ee857dbc1a89d"
-        },
         "linux-x64": {
           "fileName": "xpack-riscv-none-elf-gcc-14.2.0-3-linux-x64.tar.gz",
           "sha256": "f574415b63f12b09bdd3475223ab492a465d23810646c90c13a4c3b676c83503"
