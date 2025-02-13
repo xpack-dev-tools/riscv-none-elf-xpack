@@ -516,7 +516,7 @@ function application_build_versioned_components()
     XBB_BZIP2_VERSION="1.0.8"
 
     # https://github.com/libffi/libffi/tags
-    if [[ "${XBB_RELEASE_VERSION}" =~ 14[.]2[.]1-1[.]4 ]]
+    if [[ "${XBB_RELEASE_VERSION}" =~ 14[.]2[.]0-4 ]]
     then
       # On arm64 macOS, with clang 19, 3.4.6 fails with:
       # error: invalid CFI advance_loc expression
