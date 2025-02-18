@@ -35,7 +35,7 @@
   },
   "license": "MIT",
   "xpack": {
-    "minimumXpmRequired": "0.16.3",
+    "minimumXpmRequired": "0.20.5",
     "binaries": {
       "destination": "./.content",
       "baseUrl": "https://github.com/xpack-dev-tools/riscv-none-elf-gcc-xpack/releases/download/v14.2.0-3",
@@ -63,7 +63,7 @@
         }
       }
     },
-    "bin": {
+    "executables": {
       "riscv-none-elf-addr2line": "./.content/bin/riscv-none-elf-addr2line",
       "riscv-none-elf-ar": "./.content/bin/riscv-none-elf-ar",
       "riscv-none-elf-as": "./.content/bin/riscv-none-elf-as",
