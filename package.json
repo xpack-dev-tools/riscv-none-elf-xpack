@@ -104,8 +104,9 @@
     "liquidjs": "^10.19.1"
   },
   "topConfig": {
-    "longName": "GNU RISC-V Embedded GCC",
-    "shortName": "riscv-none-elf-gcc"
+    "descriptiveName": "GNU RISC-V Embedded GCC",
+    "permalinkName": "riscv-none-elf-gcc",
+    "useSelfHostedRunners": "true"
   },
   "engines": {
     "node": " >=18.0.0"
